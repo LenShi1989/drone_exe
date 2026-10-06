@@ -1,0 +1,35 @@
+; 複製成 server.ini 放在 DroneServer.exe 同一個資料夾。
+; 任何設定都可用環境變數覆蓋,格式 DRONE_<區段>__<鍵>,例:DRONE_DATABASE__PASSWORD=xxx
+
+[database]
+host = localhost
+port = 5432
+name = drone_system
+user = drone
+password = drone_pass
+
+[server]
+; 0.0.0.0 = 允許其他電腦連線;只給本機用可改 127.0.0.1
+host = 0.0.0.0
+port = 5080
+log_level = info
+
+[jwt]
+; 正式環境務必改成 ≥32 字元的隨機字串
+secret_key = CHANGE_ME_dev_only_secret_key_at_least_32_chars_long
+access_token_minutes = 120
+refresh_token_days = 7
+
+[simulator]
+; false = 關閉模擬器 (等待真實遙測來源)
+enabled = true
+tick_seconds = 1
+persist_telemetry_seconds = 10
+persist_drone_seconds = 5
+auto_dispatch = true
+dispatch_interval_seconds = 15
+cruise_speed_mps = 9
+return_battery_percent = 25
+charge_rate_percent_per_second = 0.2
+sync_interval_seconds = 30
+patrol_resume_battery_percent = 80

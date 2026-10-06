@@ -1,0 +1,13 @@
+; 複製成 client.ini 放在 DroneClient.exe 同一個資料夾。
+
+[server]
+; 後端位址 (DroneServer.exe 所在電腦)
+url = http://localhost:5080
+timeout = 15
+
+[map]
+; false = 不下載圖磚,使用離線網格底圖
+online = true
+tile_url = https://tile.openstreetmap.org/{z}/{x}/{y}.png
+center_lat = 25.0559
+center_lng = 121.6156

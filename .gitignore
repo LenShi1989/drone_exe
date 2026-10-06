@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.log
+screenshots/
+selftest.txt
+# 本機設定 (範本在 deploy/*.ini.example)
+/server.ini
+/client.ini
+.venv/
+venv/
